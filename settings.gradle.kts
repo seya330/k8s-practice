@@ -7,6 +7,9 @@ include(
     "order:adapter-persistence",
 
     "product",
+    "product:application",
+    "product:adapter-web",
+    "product:adapter-persistence",
 
     "cart"
 )

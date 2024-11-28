@@ -1,12 +1,12 @@
-package com.honeybug.k8spractice.adapterweb;
+package com.honeybug.k8spractice.order.adapterweb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WebApplication {
+public class OrderWebApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebApplication.class, args);
+        SpringApplication.run(OrderWebApplication.class, args);
     }
 }

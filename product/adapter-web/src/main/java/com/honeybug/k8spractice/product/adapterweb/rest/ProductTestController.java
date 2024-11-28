@@ -1,4 +1,4 @@
-package com.honeybug.k8spractice.adapterweb.rest;
+package com.honeybug.k8spractice.product.adapterweb.rest;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/test")
-public class TestController {
+public class ProductTestController {
 
     @GetMapping
-    public ResponseEntity<String> getTest() {
-        return ResponseEntity.ok("Hello World");
+    public ResponseEntity<String> test() {
+        return ResponseEntity.ok("Hello Product");
     }
 }
