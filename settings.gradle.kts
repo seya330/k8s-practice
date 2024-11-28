@@ -1,8 +1,12 @@
 rootProject.name = "k8s-practice"
 
 include(
-    "core",
-    "application",
-    "adapter-web",
-    "adapter-persistence"
+    "order:core",
+    "order:application",
+    "order:adapter-web",
+    "order:adapter-persistence",
+
+    "product",
+
+    "cart"
 )
