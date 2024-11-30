@@ -19,3 +19,9 @@ dependencies {
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
 }
+
+tasks {
+    bootJar { enabled = false }
+    jar { enabled = true }
+    bootBuildImage { enabled = false }
+}
