@@ -11,13 +11,10 @@ val gitCommitHashTask = tasks.register<GitCommitHashTask>("gitCommitHashTask")
 tasks.getByName<BootBuildImage>("bootBuildImage") {
     dependsOn(gitCommitHashTask)
 
-    val gitCommitHash = gitCommitHashTask
+    val gitCommitHashProvider = gitCommitHashTask
         .flatMap { task -> providers.fileContents(task.outputFile).asText.map { it.trim() } }
-        .get()
 
-    println("bootBuildImage gitCommitHash: $gitCommitHash")
-
-    imageName = "local/order-api:${gitCommitHash}"
+    imageName.set(gitCommitHashProvider.map { hash -> "local/order-api:${hash}" })
     publish = false
 }
 

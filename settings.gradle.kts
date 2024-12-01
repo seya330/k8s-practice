@@ -6,7 +6,7 @@ include(
     "order:adapter-web",
     "order:adapter-persistence",
 
-    "product",
+    "product:core",
     "product:application",
     "product:adapter-web",
     "product:adapter-persistence",

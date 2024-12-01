@@ -1,11 +1,7 @@
 plugins {
-    id("java-convention")
+    id("api-convention")
 }
 
 repositories {
     mavenCentral()
-}
-
-dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web")
 }
