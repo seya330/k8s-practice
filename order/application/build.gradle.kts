@@ -7,5 +7,5 @@ repositories {
 }
 
 dependencies {
-
+    api(project(":order:core"))
 }

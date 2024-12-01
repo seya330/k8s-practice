@@ -7,5 +7,5 @@ repositories {
 }
 
 dependencies {
-
+    implementation(project(":order:application"))
 }

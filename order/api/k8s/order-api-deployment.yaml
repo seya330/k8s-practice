@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-api
+  labels:
+    app: order-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: order-api
+  template:
+    metadata:
+      name: order-api
+      labels:
+        app: order-api
+    spec:
+      containers:
+        - name: order-api
+          image: local/order-api:bda6720
+          imagePullPolicy: Never
+      restartPolicy: Always
+      

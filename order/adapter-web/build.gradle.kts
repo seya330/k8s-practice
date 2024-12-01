@@ -1,7 +1,11 @@
 plugins {
-    id("api-convention")
+    id("java-convention")
 }
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    implementation(project(":order:application"))
 }
