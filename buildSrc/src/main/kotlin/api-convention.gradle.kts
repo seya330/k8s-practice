@@ -10,11 +10,12 @@ val gitCommitHashTask = tasks.register<GitCommitHashTask>("gitCommitHashTask")
 
 tasks.getByName<BootBuildImage>("bootBuildImage") {
     dependsOn(gitCommitHashTask)
-
     val gitCommitHashProvider = gitCommitHashTask
         .flatMap { task -> providers.fileContents(task.outputFile).asText.map { it.trim() } }
-
-    imageName.set(gitCommitHashProvider.map { hash -> "local/order-api:${hash}" })
+    val createImageProvider = providers.provider {
+        project.extra["createdImageName"]?.toString() ?: throw IllegalArgumentException("extra[\"createdImageName\"] = imagename must be setted")
+    }
+    imageName.set(createImageProvider.zip(gitCommitHashProvider) { createImageName, hash -> "$createImageName:$hash" })
     publish = false
 }
 

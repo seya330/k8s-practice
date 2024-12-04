@@ -2,6 +2,8 @@ plugins {
     id("api-convention")
 }
 
+extra["createdImageName"] = "local/order-api"
+
 repositories {
     mavenCentral()
 }
