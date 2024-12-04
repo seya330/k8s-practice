@@ -8,4 +8,5 @@ repositories {
 
 dependencies {
     implementation(project(":order:application"))
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
 }

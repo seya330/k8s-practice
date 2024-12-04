@@ -25,8 +25,14 @@ tasks.compileJava {
 }
 
 repositories {
-    gradlePluginPortal()
     mavenCentral()
+    gradlePluginPortal()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2024.0.0")
+    }
 }
 
 dependencies {

@@ -1,2 +1,6 @@
 server:
   port: 8080
+
+resource:
+  product:
+    api-url: http://localhost:8081
