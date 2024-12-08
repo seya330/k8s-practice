@@ -12,5 +12,10 @@ include(
     "product:api",
     "product:adapter-persistence",
 
-    "cart"
+    "cart",
+
+    "user:core",
+    "user:application",
+    "user:adapter-persistence",
+    "user:api"
 )
