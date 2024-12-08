@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-order-api
+  labels:
+    app: order-api
+    name: {{ .Release.Name }}-order-api
+spec:
+  replicas: {{ .Values.orderApi.replicaCount }}
+  selector:
+    matchLabels:
+      app: order-api
+      name: {{ .Release.Name }}-order-api
+  template:
+    metadata:
+      labels:
+        app: order-api
+        name: {{ .Release.Name }}-order-api
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-order-api
+          image: local/order-api:c4d3457
+          ports:
+            - name: http
+              containerPort: 80

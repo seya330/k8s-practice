@@ -1,0 +1,5 @@
+orderApi:
+  replicaCount: 1
+
+productApi:
+  replicaCount: 1s

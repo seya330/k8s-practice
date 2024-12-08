@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-product-api
+  labels:
+    app: product-api
+    name: {{ .Release.Name }}-product-api
+spec:
+  replicas: {{ .Values.productApi.replicaCount }}
+  selector:
+    matchLabels:
+      app: product-api
+      name: {{ .Release.Name }}-product-api
+  template:
+    metadata:
+      labels:
+        app: product-api
+        name: {{ .Release.Name }}-product-api
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-product-api
+          image: local/product-api:1323beb
+          ports:
+            - name: http
+              containerPort: 80
