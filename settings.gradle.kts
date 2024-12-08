@@ -17,5 +17,7 @@ include(
     "user:core",
     "user:application",
     "user:adapter-persistence",
-    "user:api"
+    "user:api",
+
+    "shared"
 )

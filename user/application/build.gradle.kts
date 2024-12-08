@@ -9,4 +9,5 @@ repositories {
 dependencies {
     api(project(":user:core"))
     implementation("org.springframework:spring-tx");
+    testImplementation(project(":shared"))
 }

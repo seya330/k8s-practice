@@ -44,10 +44,16 @@ dependencies {
     annotationProcessor("org.mapstruct:mapstruct-processor")
     implementation("org.mapstruct:mapstruct:${mapstructVersion}")
     annotationProcessor("org.mapstruct:mapstruct-processor:${mapstructVersion}")
+    testImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter:1.1.3")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 tasks {
     bootJar { enabled = false }
     jar { enabled = true }
     bootBuildImage { enabled = false }
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
